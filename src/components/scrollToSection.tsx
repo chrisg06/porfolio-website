@@ -1,5 +1,3 @@
-"use client";
-
 import { IoIosArrowDown } from "react-icons/io";
 
 interface ScrollToSectionProps {
@@ -15,11 +13,13 @@ const scrollToSection = (id: string) => {
 
 export default function ScrollToSection({ id }: ScrollToSectionProps) {
   return (
-    <button
-      onClick={() => scrollToSection(id)}
-      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4"
-    >
-      <IoIosArrowDown className="w-16 h-16 animate-bounce" />
-    </button>
+    <div className="relative">
+      <button
+        onClick={() => scrollToSection(id)}
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4"
+      >
+        <IoIosArrowDown className="w-16 h-16 animate-bounce" />
+      </button>
+    </div>
   );
 }
