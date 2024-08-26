@@ -3,15 +3,17 @@
 import RetroGrid from "@/components/magicui/retro-grid";
 
 interface HomeHeroGridProps {
-  content: string;
+  title: string;
+  subtitle: string;
 }
 
-export default function HomeHeroGrid({ content }: HomeHeroGridProps) {
+export default function HomeHeroGrid({ title, subtitle }: HomeHeroGridProps) {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-b-3xl border bg-background md:shadow-xl">
+    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden border bg-background md:shadow-xl">
       <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
-        {content}
+        {title}
       </span>
+      <h2 className="text-center text-4xl text-slate-900 font-semibold">{subtitle}</h2>
 
       <RetroGrid />
     </div>
