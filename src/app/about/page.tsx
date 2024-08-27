@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import HeroTitle from "@/components/heroTitle";
 import IconCloud from "@/components/magicui/icon-cloud";
