@@ -27,13 +27,16 @@ export default function GithubContributions() {
     fetchCommitData();
   }, []);
 
+  const year = new Date().getFullYear();
+
   return (
     <>
       <StatCard
-        title="GitHub Contributions"
+        title="GitHub Stats"
+        subtitle={year.toString()}
         value={contributionCount || 0}
         loading={loading}
-        subtext="This Year"
+        subtext={`Contributions`}
       />
     </>
   );
