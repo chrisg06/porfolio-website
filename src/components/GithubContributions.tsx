@@ -29,7 +29,12 @@ export default function GithubContributions() {
 
   return (
     <>
-    <StatCard title="GitHub Stats" value={contributionCount || 0} loading={loading} subtext="Total Contributions This Year" />
+      <StatCard
+        title="GitHub Contributions"
+        value={contributionCount || 0}
+        loading={loading}
+        subtext="This Year"
+      />
     </>
   );
 }
