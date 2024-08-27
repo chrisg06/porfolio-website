@@ -5,10 +5,10 @@ interface HeroTitleProps {
 export default function HeroTitle({ title }: HeroTitleProps) {
     return (
         <>
-        <h1 className="pt-8 bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl font-bold tracking-tighter text-transparent">
+        <h1 className="pt-4 bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl font-bold tracking-tighter text-transparent">
           {title}
         </h1>
-        <hr className="mx-auto my-8 h-1 w-60 border-0 bg-gray-100" />
+        <hr className="mx-auto my-4 h-1 w-60 border-0 bg-gray-100" />
         </>
     );
 }
