@@ -27,10 +27,8 @@ export default function HomePage() {
               />
             </svg>
             <div className="relative z-10">
-              <p className="ml-4 text-left font-sans text-xl w-2/3 md:w-1/2 3xl:-translate-x-32 -translate-y-10">
-                I'm a passionate junior Back-End Developer based in Perth,
-                Australia, currently studying Software Engineering with a strong
-                interest in API Development...
+              <p className="ml-16 text-left font-sans text-xl w-2/3 md:w-1/2 3xl:-translate-x-32 -translate-y-10">
+          Hello! I'm a passionate and dedicated software engineer currently pursuing a Bachelor of Computing with a major in Software Engineering at Curtin University. My journey into the world of programming began in high school, and I have now continued it into my tertiary studies. I have experience in a variety of languages and frameworks, and I am always looking to learn more...
               </p>
             </div>
           </div>
