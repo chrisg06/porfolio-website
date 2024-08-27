@@ -7,14 +7,13 @@ import TypingAnimation from "@/components/magicui/typing-animation";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen grid grid-rows-[auto_auto_1fr]">
+    <div className="min-h-screen grid grid-rows-[auto_auto_1fr] w-full">
       <Header />
       <HomeHeroGrid
         title="Chris Gardiner's Portfolio"
         subtitle="Backend Engineer"
       />
-
-      <section id="home" className="p-4">
+      <section id="home" className="p-4 mt-8">
         <div className="flex items-center justify-center h-full">
           <TypingAnimation
             className="text-center font-light text-xl w-2/3 md:w-1/2 3xl:-translate-x-32 -translate-y-10"
