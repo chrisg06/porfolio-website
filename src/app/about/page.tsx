@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import HeroTitle from "@/components/heroTitle";
 import IconCloud from "@/components/magicui/icon-cloud";
 import GithubContributions from "@/components/GithubContributions";
@@ -14,6 +15,16 @@ function getDaysSoFarInYear(): number {
 
 export default function AboutPage() {
   const coffeeCount = getDaysSoFarInYear() * 1.5;
+
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const slugs = [
     "typescript",
@@ -45,7 +56,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <section id="about" className="min-h-screen bg-white">
+    <section id="about" className="min-h-screen bg-white w-full">
       <div className="relative">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -54,12 +65,12 @@ export default function AboutPage() {
             transform="translate(0, -30)"></path>
         </svg>
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
-          <HeroTitle title="About" />
+          <HeroTitle title="About" underline={false} />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center mx-8 md:mx-16 lg:mx-24 place-items-center">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 items-center mx-8 md:mx-16 lg:mx-24 place-items-center">
         <div className="col-span-1">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 items-center place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 items-center place-items-center">
             <div className="col-span-1 px-2">
               <GithubContributions />
             </div>
@@ -68,7 +79,7 @@ export default function AboutPage() {
                 title="Coffee Counter"
                 value={coffeeCount}
                 subtext="Cups Consumed"
-                loading={false}
+                loading={loading}
               />
             </div>
             <div className="col-span-1 px-2">
@@ -76,20 +87,25 @@ export default function AboutPage() {
                 title="Lines of Code"
                 value={136}
                 subtext="So Far"
-                loading={false}
+                loading={loading}
                 valueUnit="K"
               />
             </div>
           </div>
 
-          <p className="text-center md:text-left text-xl w-4/5 mt-8 ml-4">
-            Hello! I'm a passionate and dedicated software engineer currently
-            pursuing a Bachelor of Computing with a major in Software
-            Engineering at Curtin University. My journey into the world of
-            programming began in high school when I used Python to draw various
-            shapes for a math class. This initial experience sparked a deep
-            interest in coding and led me to explore and master multiple
-            languages and frameworks over the years.
+          <p className="mt-8 text-center text-xl md:text-left md:w-4/5 md:ml-4">
+            I started my software development journey in 2020 and have been
+            developing powerful web applications ever since. The primary focus
+            for my development has been around the field of aviation, and tools
+            for online flight simulation.
+          </p>
+          <p className="mt-8 text-center text-xl md:text-left md:w-4/5 md:ml-4">
+            My favourite technologies to work with are Python and TypeScript,
+            which allow me to create powerful and efficient applications. I
+            always enjoy discovering new technologies, and I am currently
+            teaching myself Java and C to further expand my knowledge. When I am
+            not coding, you can find me sharing my passion for sport while
+            working as a Rowing Coach, or catching up with friends.
           </p>
         </div>
         <div className="col-span-1">
