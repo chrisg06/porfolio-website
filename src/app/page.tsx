@@ -8,10 +8,11 @@ import ProjectsPage from "./projects/page";
 import SkillsPage from "./skills/page";
 import ScrollToTop from "@/components/ScrollToTop";
 import useIntersectionObserver from "@/hooks/IntersectionObserver";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const setActiveSection = (section: string) => {
-    history.replaceState(null, '', `/#${section}`);
+    history.replaceState(null, "", `/#${section}`);
   };
 
   useIntersectionObserver(setActiveSection);
@@ -23,6 +24,7 @@ export default function Home() {
       <ProjectsPage />
       <ContactPage />
       <ScrollToTop />
+      <Footer />
     </main>
   );
 }
