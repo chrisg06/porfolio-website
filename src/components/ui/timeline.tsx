@@ -45,7 +45,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </h2>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div
+        ref={ref}
+        className="relative max-w-7xl mx-auto pb-20 overflow-hidden">
         {data.map((item, index) => (
           <div
             key={index}
