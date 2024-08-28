@@ -3,7 +3,10 @@ interface HeroTitleProps {
   underline?: boolean;
 }
 
-export default function HeroTitle({ title, underline = true }: HeroTitleProps) {
+export default function HeroTitle({
+  title,
+  underline = false,
+}: HeroTitleProps) {
   return (
     <>
       <h1 className="pt-4 bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl font-bold tracking-tighter text-transparent">
