@@ -39,8 +39,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <div className="flex justify-center max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg text-center md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           <span>
-            I've been developing for 2 years now. <br /> Here's a timeline of my
-            journey.
+            I&apos;ve been developing for 2 years now. <br /> Here&apos;s a
+            timeline of my journey.
           </span>
         </h2>
       </div>
