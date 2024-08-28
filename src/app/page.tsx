@@ -20,7 +20,6 @@ export default function Home() {
     <main>
       <HomePage />
       <AboutPage />
-      <SkillsPage />
       <ProjectsPage />
       <ContactPage />
       <ScrollToTop />

@@ -11,7 +11,7 @@ export default function HomePage() {
       <Header />
       <HomeHeroGrid
         title="Chris Gardiner's Portfolio"
-        subtitle="Backend Engineer"
+        subtitle="Full Stack Engineer"
       />
       <section id="home" className="p-4 mt-8">
         <div className="flex items-center justify-center h-full">
