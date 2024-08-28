@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import useInView from "@/hooks/useInView";
 import HeroTitle from "@/components/heroTitle";
 import IconCloud from "@/components/magicui/icon-cloud";
 import GithubContributions from "@/components/GithubContributions";
@@ -18,15 +18,9 @@ function getDaysSoFarInYear(): number {
 export default function AboutPage() {
   const coffeeCount = getDaysSoFarInYear() * 1.5;
 
-  const [loading, setLoading] = useState<boolean>(true);
+  const [setAboutRef, aboutInView] = useInView(0.1, 1000);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const loading = !aboutInView;
 
   const slugs = [
     "typescript",
@@ -58,7 +52,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <section id="about" className="min-h-screen bg-white w-full">
+    <section
+      id="about"
+      ref={setAboutRef}
+      className="min-h-screen bg-white w-full">
       <div className="relative">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -74,15 +71,7 @@ export default function AboutPage() {
         <div className="col-span-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 items-center place-items-center">
             <div className="col-span-1 px-2">
-              <GithubContributions />
-            </div>
-            <div className="col-span-1 px-2">
-              <StatCard
-                title="Coffee Counter"
-                value={coffeeCount}
-                subtext="Cups Consumed"
-                loading={loading}
-              />
+              <GithubContributions loading={loading} />
             </div>
             <div className="col-span-1 px-2">
               <StatCard
@@ -91,6 +80,14 @@ export default function AboutPage() {
                 subtext="So Far"
                 loading={loading}
                 valueUnit="K"
+              />
+            </div>
+            <div className="col-span-1 px-2">
+              <StatCard
+                title="Coffee Counter"
+                value={coffeeCount}
+                loading={loading}
+                subtext="Cups Consumed"
               />
             </div>
           </div>

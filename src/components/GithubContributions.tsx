@@ -6,11 +6,16 @@ type CommitResponse = {
   totalContributions: number;
 };
 
-export default function GithubContributions() {
+interface GithubContributionsProps {
+  loading: boolean;
+}
+
+export default function GithubContributions({
+  loading,
+}: GithubContributionsProps) {
   const [contributionCount, setContributionCount] = useState<number | null>(
     null
   );
-  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function fetchCommitData() {
@@ -19,8 +24,6 @@ export default function GithubContributions() {
         setContributionCount(response.data.totalContributions);
       } catch (error) {
         console.error("Error fetching commit data:", error);
-      } finally {
-        setLoading(false);
       }
     }
 
