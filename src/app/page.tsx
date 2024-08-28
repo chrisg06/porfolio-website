@@ -1,11 +1,9 @@
 "use client";
 
-import Header from "@/components/Header";
 import AboutPage from "./about/page";
 import ContactPage from "./contact/page";
 import HomePage from "./home/page";
 import ProjectsPage from "./projects/page";
-import SkillsPage from "./skills/page";
 import ScrollToTop from "@/components/ScrollToTop";
 import useIntersectionObserver from "@/hooks/IntersectionObserver";
 import Footer from "@/components/Footer";
