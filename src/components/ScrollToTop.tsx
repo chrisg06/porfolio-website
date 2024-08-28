@@ -1,16 +1,18 @@
-import { useEffect } from 'react';
+"use client";
+
+import { useEffect } from "react";
 
 export default function ScrollToTop() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        history.replaceState(null, '', window.location.pathname);
+        history.replaceState(null, "", window.location.pathname);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
