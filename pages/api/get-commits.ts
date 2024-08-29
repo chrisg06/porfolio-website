@@ -23,10 +23,18 @@ export default async function handler(
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const username = req.query.username || "chrisg06";
 
+  const date = new Date();
+  const currentDate = date.toISOString();
+  const lastYear = date.setFullYear(date.getFullYear() - 1);
+  // get date 1 year ago iso time at 00:00:00
+  const lastYearDate =
+    new Date(lastYear).toISOString().split("T")[0] + "T00:00:00Z";
+  console.log("lastYearDate", lastYearDate);
+
   const query = `
   query {
     user(login: "${username}") {
-      contributionsCollection(from: "2023-08-27T00:00:00Z", to: "2024-08-27T00:00:00Z") {
+      contributionsCollection(from: "${lastYearDate}", to: "${currentDate}") {
         totalCommitContributions
         totalPullRequestContributions
         totalIssueContributions
