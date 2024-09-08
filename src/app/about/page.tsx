@@ -47,8 +47,17 @@ export default function AboutPage() {
     "angular",
     "mongodb",
     "redis",
-    "vim",
     "githubactions",
+    "tailwindcss",
+    "linode",
+    "cloudflare",
+    "portainer",
+    "nginxproxymanager",
+    "vuejs",
+    "mysql",
+    "prometheus",
+    "grafana",
+    "sentry",
   ];
 
   return (
