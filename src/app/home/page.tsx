@@ -13,7 +13,7 @@ export default function HomePage() {
         title="Chris Gardiner's Portfolio"
         subtitle="Full Stack Engineer"
       />
-      <section id="home" className="p-4 mt-8">
+      <section id="home" className="p-4 mt-8 pb-16">
         <div className="flex items-center justify-center h-full">
           <TypingAnimation
             className="text-center font-light text-xl w-2/3 md:w-1/2 3xl:-translate-x-32 -translate-y-10"
@@ -21,7 +21,6 @@ export default function HomePage() {
             duration={25}
           />
         </div>
-
         <ScrollToSection id="about" />
       </section>
     </div>
