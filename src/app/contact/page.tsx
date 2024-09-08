@@ -112,7 +112,9 @@ export default function ContactPage() {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-white w-full">
+    <section
+      id="contact"
+      className="min-h-screen bg-gradient-to-b from-gray-100 to-white to-5% w-full">
       <div className="relative">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path

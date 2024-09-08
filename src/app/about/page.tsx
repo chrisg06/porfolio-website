@@ -47,8 +47,17 @@ export default function AboutPage() {
     "angular",
     "mongodb",
     "redis",
-    "vim",
     "githubactions",
+    "tailwindcss",
+    "linode",
+    "cloudflare",
+    "portainer",
+    "nginxproxymanager",
+    "vuejs",
+    "mysql",
+    "prometheus",
+    "grafana",
+    "sentry",
   ];
 
   return (
@@ -102,9 +111,9 @@ export default function AboutPage() {
             My favourite technologies to work with are Python and TypeScript,
             which allow me to create powerful and efficient applications. I
             always enjoy discovering new technologies, and I am currently
-            teaching myself Java and C to further expand my knowledge. When I am
-            not coding, you can find me sharing my passion for sport while
-            working as a Rowing Coach, or catching up with friends.
+            learning Java and C to further expand my knowledge. When I am not
+            coding, you can find me sharing my passion for sport while working
+            as a Rowing Coach, or catching up with friends.
           </p>
         </div>
         <div className="col-span-1">
