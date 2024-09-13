@@ -10,6 +10,10 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const setActiveSection = (section: string) => {
+    if (section === "home") {
+      window.history.replaceState(null, "", "/");
+      return;
+    }
     history.replaceState(null, "", `/#${section}`);
   };
 
