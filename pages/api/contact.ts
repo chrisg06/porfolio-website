@@ -33,7 +33,7 @@ export default async function handler(
   try {
     await client.messages.create(DOMAIN, messageData);
   } catch (err: any) {
-    console.error("Error seding email", err);
+    console.error("Error sending email", err);
   }
 
   res.status(200).json({ submitted: true });

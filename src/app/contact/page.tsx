@@ -107,7 +107,7 @@ export default function ContactPage() {
         setIsSuccess(true);
       }
     } catch (err: any) {
-      console.log("Err", err);
+      console.error("Err", err);
     }
   };
 

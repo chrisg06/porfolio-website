@@ -29,7 +29,6 @@ export default async function handler(
   // get date 1 year ago iso time at 00:00:00
   const lastYearDate =
     new Date(lastYear).toISOString().split("T")[0] + "T00:00:00Z";
-  console.log("lastYearDate", lastYearDate);
 
   const query = `
   query {

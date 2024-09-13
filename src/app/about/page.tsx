@@ -1,8 +1,8 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import useInView from "@/hooks/useInView";
 import HeroTitle from "@/components/heroTitle";
-import IconCloud from "@/components/magicui/icon-cloud";
 import GithubContributions from "@/components/GithubContributions";
 import StatCard from "@/components/StatCard";
 import ScrollToSection from "@/components/scrollToSection";
@@ -14,6 +14,11 @@ function getDaysSoFarInYear(): number {
   const diffInDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
   return diffInDays + 1; // Add 1 to include the current day
 }
+
+const IconCloudNoSSR = dynamic(
+  () => import("@/components/magicui/icon-cloud"),
+  { ssr: false }
+);
 
 export default function AboutPage() {
   const coffeeCount = getDaysSoFarInYear() * 1.5;
@@ -53,7 +58,6 @@ export default function AboutPage() {
     "cloudflare",
     "portainer",
     "nginxproxymanager",
-    "vuejs",
     "mysql",
     "prometheus",
     "grafana",
@@ -118,7 +122,7 @@ export default function AboutPage() {
         </div>
         <div className="col-span-1">
           <div className="relative flex h-full w-full max-w-[32rem] items-center justify-center overflow-hidden bg-background px-20 pb-20 pt-8 ">
-            <IconCloud iconSlugs={slugs} />
+            <IconCloudNoSSR iconSlugs={slugs} />
           </div>
         </div>
       </div>
